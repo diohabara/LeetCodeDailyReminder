@@ -1,7 +1,7 @@
 const LEETCODE_API_ENDPOINT = "https://leetcode.com/graphql";
-const DAILY_CODING_CHALLENGE_QUERY = `
 const TODOIST_API_ENDPOINT = "https://api.todoist.com/rest/v1";
-
+const TODOIST_API_TOKEN = Deno.env.get("TODOIST_API_TOKEN");
+const DAILY_CODING_CHALLENGE_QUERY = `
 query questionOfToday {
 	activeDailyCodingChallengeQuestion {
 		date
