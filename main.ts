@@ -81,7 +81,7 @@ const createTodoistTask = async (question: Question) => {
   console.log(`Creating Todoist task with title ${questionTitle}.`);
 
   const body = {
-    content: `[${questionTitle}](${questionLink})`,
+    content: `${questionTitle}: ${questionLink}`,
     description: `Difficulty: ${questionDifficulty}`,
     due_string: "Today",
     priority: 4,
