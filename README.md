@@ -14,6 +14,7 @@ Create a LeetCode-daily-problem task at Todoist
   ```
 
 - Run [`gh secret set -f .env`](https://cli.github.com/manual/gh_secret_set) so that the secrets set in GitHub
+- Rewrite 2 `FIXME` in [`main.ts`](main.ts) to set `labels` and `section_id`.
 
 ## How to Run
 

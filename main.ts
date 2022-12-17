@@ -62,9 +62,18 @@ const fetchDailyCodingChallenge = async () => {
     body: JSON.stringify({ query: DAILY_CODING_CHALLENGE_QUERY }),
   };
   console.log("Fetching json...");
-  const response = await fetch(LEETCODE_API_ENDPOINT, init);
-  console.log("Successfully fetched\n", response);
-  return response.json();
+  let response;
+  await fetch(LEETCODE_API_ENDPOINT, init)
+    .then((json_response) => {
+      console.log("Successfully fetched");
+      console.log(json_response);
+      response = json_response.json;
+    })
+    .catch((error) => {
+      console.log(error);
+      Deno.exit(1);
+    })
+  return response;
 };
 
 const createTodoistTask = async (api: TodoistApi, question: Question) => {
@@ -95,7 +104,7 @@ const createTodoistTask = async (api: TodoistApi, question: Question) => {
       `${questionId}: ${questionTitle} [${questionTitle}](${questionLink})`,
     description: `Difficulty: ${questionDifficulty}`,
     due_string: "today",
-    labels: ["work"], // FIXEME: specify the labels you want to add to the task
+    labels: ["work"], // FIXME: specify the labels you want to add to the task
     section_id: targetSectionId,
   };
   console.log(questionInfo);
