@@ -67,12 +67,12 @@ const fetchDailyCodingChallenge = async () => {
     .then((json_response) => {
       console.log("Successfully fetched");
       console.log(json_response);
-      response = json_response.json;
+      response = json_response.json();
     })
     .catch((error) => {
       console.log(error);
       Deno.exit(1);
-    })
+    });
   return response;
 };
 
