@@ -4,6 +4,7 @@ on:
   schedule:
     # 00:00(UTC) every day: https://crontab.guru/#0_0_*_*_*
     - cron: "0 0 * * *"
+
 jobs:
   build:
     name: Remind
