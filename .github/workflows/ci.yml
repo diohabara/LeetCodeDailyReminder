@@ -21,4 +21,4 @@ jobs:
           deno lint
       - name: Run tests
         run: |
-          deno test
+          deno test --allow-none
