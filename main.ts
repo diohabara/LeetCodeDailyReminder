@@ -62,7 +62,8 @@ const fetchDailyCodingChallenge = async () => {
     body: JSON.stringify({ query: DAILY_CODING_CHALLENGE_QUERY }),
   };
   console.log("Fetching json...");
-  let response;
+  // deno-lint-ignore no-explicit-any
+  let response: any;
   await fetch(LEETCODE_API_ENDPOINT, init)
     .then((json_response) => {
       console.log("Successfully fetched");
@@ -101,7 +102,7 @@ const createTodoistTask = async (api: TodoistApi, question: Question) => {
     });
   const body = {
     content:
-      `${questionId}: ${questionTitle} [${questionTitle}](${questionLink})`,
+      `${questionId}: [${questionTitle}](${questionLink})`,
     description: `Difficulty: ${questionDifficulty}`,
     due_string: "today",
     labels: ["work"], // FIXME: specify the labels you want to add to the task
