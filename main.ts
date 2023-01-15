@@ -90,7 +90,7 @@ const createTodoistTask = async (api: TodoistApi, question: Question) => {
       console.log("Fetching sections...");
       console.log(sections);
       for (const section of sections) {
-        if (section.name === "WIP") { // FIXME: specify the section you want to add the task to
+        if (section.name === "DAILY") { // FIXME: specify the section you want to add the task to
           targetSectionId = section.id.toString();
         }
       }
