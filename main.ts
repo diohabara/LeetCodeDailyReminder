@@ -101,8 +101,7 @@ const createTodoistTask = async (api: TodoistApi, question: Question) => {
       Deno.exit(1);
     });
   const body = {
-    content:
-      `${questionId}: [${questionTitle}](${questionLink})`,
+    content: `${questionId}: [${questionTitle}](${questionLink})`,
     description: `Difficulty: ${questionDifficulty}`,
     due_string: "today",
     labels: ["work"], // FIXME: specify the labels you want to add to the task
